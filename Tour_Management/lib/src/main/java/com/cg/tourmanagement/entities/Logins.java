@@ -13,9 +13,7 @@ import javax.persistence.Table;
 public class Logins {
 	@Id
 	private String userId;
-	@SequenceGenerator(name = "pwd_seq", initialValue = 1001, 
-			sequenceName = "pwd_code_gen", allocationSize =35)
-	@GeneratedValue(generator = "pwd_seq", strategy = GenerationType.SEQUENCE)
+	@Column(name="password")
 	private int password;
 	@Column(name="role",length=20)
 	private String role;
