@@ -4,5 +4,6 @@ import com.cg.tourmanagement.dto.LoginDto;
 
 public interface LoginService {
 void addLogins(LoginDto logindto);
+void deleteLogin(LoginDto logindto);
 
 }
