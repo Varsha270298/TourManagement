@@ -25,7 +25,7 @@ public class CustomerServiceImpl implements CustomerService{
 	TourInfoRepository tourinforepo;
 
 	@Override
-	public void addCustomer(CustomerDto custdto)  {
+	public int addCustomer(CustomerDto custdto)  {
 		TourInformationSystem tour=tourrepo.getpackageId(custdto.getPackageId());
 		TourInfo tourinfo=tourinforepo.getReservePackageId(custdto.getReserevdPackageId());
 		Customer cust=new Customer();
@@ -39,6 +39,7 @@ public class CustomerServiceImpl implements CustomerService{
 		cust.setModeOfPayment(custdto.getModeOfPayment());
 		cust.setTourinfo(tourinfo);
 		custrepo.save(cust);
+		return cust.getCustomerId();
 		
 	}
 
