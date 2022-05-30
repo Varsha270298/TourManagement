@@ -12,8 +12,7 @@ import com.cg.tourmanagement.entities.TourInformationSystem;
 
 //@Service
 public interface CustomerService {
-	void addCustomer(CustomerDto custdto);
-	
+	int addCustomer(CustomerDto custdto);
 	List<TourInformationSystem> getpackageName();
 	void AddPackage(TourInfoDto tourinfodto);
 	void updateTourInfo(TourInfo tourinfo);

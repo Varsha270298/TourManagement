@@ -16,6 +16,10 @@ public class CustomerDto {
 	private  int packageId;
 	private int reserevdPackageId;
 	
+	
+	public CustomerDto() {
+	}
+
 	public CustomerDto(int  customerId, String userId, int password, String firstName, String lastName, long mobileNo,
 			int age, String gender, String modeOfPayment, int packageId, int reserevdPackageId) {
 		
