@@ -9,11 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.cg.tourmanagement.entities.TourInfo;
 @Repository
 public interface TourInfoRepository  extends JpaRepository<TourInfo, Integer>{
-	@Transactional
-	@Modifying
-	//@Query("update t from TourInfo t set t.Status = 'Booked' where t.reserevdPackageId = :id")
-	public int confirm(int id);
-
+	
 
 	@Query(value = "select tour from TourInfo  tour where tour.reserevdPackageId=?1")
 	TourInfo getReservePackageId(int reserevdPackageId);

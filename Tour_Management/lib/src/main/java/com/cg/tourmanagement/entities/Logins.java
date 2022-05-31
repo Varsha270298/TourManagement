@@ -17,6 +17,21 @@ public class Logins {
 	private int password;
 	@Column(name="role",length=20)
 	private String role;
+	
+	public Logins() {
+<<<<<<< HEAD
+	}
+	public Logins(String userId, int password, String role) {
+=======
+		
+	}
+	public Logins(String userId, int password, String role) {
+		
+>>>>>>> 63c1d070c96a08e85173e5299aa609fb0a5177d0
+		this.userId = userId;
+		this.password = password;
+		this.role = role;
+	}
 	public String getUserId() {
 		return userId;
 	}

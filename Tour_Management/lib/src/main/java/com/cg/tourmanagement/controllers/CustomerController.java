@@ -25,14 +25,14 @@ import com.cg.tourmanagement.entities.TourInfo;
 public class CustomerController {
 	@Autowired
     CustomerServiceImpl custservice;
-	@PostMapping("/cust")
+	@PostMapping("/addcust")
 	public ResponseEntity<String> addCustomer(@RequestBody CustomerDto custdto){
 		custservice.addCustomer(custdto);;
 		return new ResponseEntity<String>("inserted", HttpStatus.OK);
 	
 	}
 	
-	@PostMapping("/tour")
+	@PostMapping("/reservetour")
 	public ResponseEntity<String>addPackage(@RequestBody TourInfoDto tourdto){
 	custservice.AddPackage(tourdto);
 		return new ResponseEntity<String>("inserted", HttpStatus.OK);
@@ -44,12 +44,12 @@ public class CustomerController {
 		return new ResponseEntity<String>("deleted", HttpStatus.OK);
 	}
 	@GetMapping("/id/{reserevdPackageId}")
-	public ResponseEntity<Optional<TourInfo>> getDeptById(@PathVariable int reserevdPackageId ){
+	public ResponseEntity<Optional<TourInfo>> getreservetourById(@PathVariable int reserevdPackageId ){
 		Optional<TourInfo> tour = custservice.viewreserevdPackageById(reserevdPackageId);
 		return new ResponseEntity<Optional<TourInfo>>(tour,HttpStatus.OK);
 	}
-	@PutMapping
-	public ResponseEntity<String> editpackage(@RequestBody  TourInfo tourinfo ){
+	@PutMapping("/updatereservetour")
+	public ResponseEntity<String> editpackage(@RequestBody  TourInfoDto tourinfo ){
 		custservice.updateTourInfo(tourinfo);
 		return new ResponseEntity<String>("updated",HttpStatus.OK);
 	}
