@@ -17,6 +17,16 @@ public class Logins {
 	private int password;
 	@Column(name="role",length=20)
 	private String role;
+	
+	public Logins() {
+		
+	}
+	public Logins(String userId, int password, String role) {
+		
+		this.userId = userId;
+		this.password = password;
+		this.role = role;
+	}
 	public String getUserId() {
 		return userId;
 	}
