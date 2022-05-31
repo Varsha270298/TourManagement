@@ -19,18 +19,6 @@ public class TourInfo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int reserevdPackageId;
-	public String getPayMode() {
-		return PayMode;
-	}
-	public void setPayMode(String payMode) {
-		PayMode = payMode;
-	}
-	public String getStatus() {
-		return Status;
-	}
-	public void setStatus(String status) {
-		Status = status;
-	}
 	@Column(name="packagename",length=30)
 	private String  packageName;
 	@Column(name="description",length=30)
@@ -49,97 +37,193 @@ public class TourInfo {
 	private String modeOfTransportation;
 	@Column(name="hotel",length=30)
 	private String hotel;
-	private int confirm;
-	
-	
-	
-	
+	private String confirm;
 	@Column(name="PayMode",length=30)
-	private String PayMode; //Payment method usued to book the hotels or any other resources
+	private String payMode; //Payment method used to book the hotels or any other resources
 	//Online, Cash, Card, Upi
 	
 	@Column(name="Status",length=30)
-	private String Status; //Booking Status
+	private String status; //Booking Status
 	
 	@OneToOne
 	@JoinColumn(name="packageId")
 	private  TourInformationSystem tour;
 	
+	
+	
+	
+
+
+	public TourInfo() {
+	}
+
+
+
 	public int getReserevdPackageId() {
 		return reserevdPackageId;
 	}
+
+
+
 	public void setReserevdPackageId(int reserevdPackageId) {
 		this.reserevdPackageId = reserevdPackageId;
 	}
-	public String getDescription() {
-		return description;
-	}
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	
-	public int getNoOfPersons() {
-		return noOfPersons;
-	}
-	public void setNoOfPersons(int noOfPersons) {
-		this.noOfPersons = noOfPersons;
-	}
-	public int getNumberOfDays() {
-		return numberOfDays;
-	}
-	public void setNumberOfDays(int numberOfDays) {
-		this.numberOfDays = numberOfDays;
-	}
-	public double getAmountPerPerson() {
-		return amountPerPerson;
-	}
-	public void setAmountPerPerson(double amountPerPerson) {
-		this.amountPerPerson = amountPerPerson;
-	}
-	public String getModeOfTransportation() {
-		return modeOfTransportation;
-	}
-	public void setModeOfTransportation(String modeOfTransportation) {
-		this.modeOfTransportation = modeOfTransportation;
-	}
-	public String getHotel() {
-		return hotel;
-	}
-	public void setHotel(String hotel) {
-		this.hotel = hotel;
-	}
-	
+
+
+
 	public String getPackageName() {
 		return packageName;
 	}
+
+
+
 	public void setPackageName(String packageName) {
 		this.packageName = packageName;
 	}
+
+
+
+	public String getDescription() {
+		return description;
+	}
+
+
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+
+
 	public Date getStartDate() {
 		return startDate;
 	}
+
+
+
 	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
 	}
+
+
+
 	public Date getEndDate() {
 		return endDate;
 	}
+
+
+
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
+
+
+
+	public int getNoOfPersons() {
+		return noOfPersons;
+	}
+
+
+
+	public void setNoOfPersons(int noOfPersons) {
+		this.noOfPersons = noOfPersons;
+	}
+
+
+
+	public int getNumberOfDays() {
+		return numberOfDays;
+	}
+
+
+
+	public void setNumberOfDays(int numberOfDays) {
+		this.numberOfDays = numberOfDays;
+	}
+
+
+
+	public double getAmountPerPerson() {
+		return amountPerPerson;
+	}
+
+
+
+	public void setAmountPerPerson(double amountPerPerson) {
+		this.amountPerPerson = amountPerPerson;
+	}
+
+
+
+	public String getModeOfTransportation() {
+		return modeOfTransportation;
+	}
+
+
+
+	public void setModeOfTransportation(String modeOfTransportation) {
+		this.modeOfTransportation = modeOfTransportation;
+	}
+
+
+
+	public String getHotel() {
+		return hotel;
+	}
+
+
+
+	public void setHotel(String hotel) {
+		this.hotel = hotel;
+	}
+
+
+
+	public String getConfirm() {
+		return confirm;
+	}
+
+
+
+	public void setConfirm(String confirm) {
+		this.confirm = confirm;
+	}
+
+
+
+	public String getPayMode() {
+		return payMode;
+	}
+
+
+
+	public void setPayMode(String payMode) {
+		this.payMode = payMode;
+	}
+
+
+
+	public String getStatus() {
+		return status;
+	}
+
+
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+
+
 	public TourInformationSystem getTour() {
 		return tour;
 	}
+
+
+
 	public void setTour(TourInformationSystem tour) {
 		this.tour = tour;
 	}
-	public int getConfirm() {
-		return confirm;
-	}
-	public void setConfirm(int confirm) {
-		this.confirm = confirm;
-	}
-	
 	
 	
 	

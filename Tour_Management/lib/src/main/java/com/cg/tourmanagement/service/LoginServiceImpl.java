@@ -14,10 +14,6 @@ public class LoginServiceImpl implements LoginService{
 	LoginRepository loginrepo;
 	@Override
 	public void addLogins(LoginDto logindto) {
-		Logins userid=loginrepo.getLoginUserId(logindto.getUserId());
-		Logins pwd =loginrepo.getLoginPassword(logindto.getPassword());
-		if(userid.equals(logindto.getUserId()))
-			throw new UserIdAlreadyExistsException();
 		
 		
 		Logins logins=new Logins();
@@ -27,12 +23,8 @@ public class LoginServiceImpl implements LoginService{
 		loginrepo.save(logins);
 		
 	}
-	@Override
-	public void deleteLogin(LoginDto logindto) {
-		Logins login=loginrepo.deleteByRole(logindto.getRole());
-		loginrepo.delete(login);
-		
-	}
+	
+	
 	
 
 }

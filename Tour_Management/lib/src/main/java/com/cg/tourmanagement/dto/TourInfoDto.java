@@ -12,11 +12,16 @@ public class TourInfoDto {
 	private Date endDate;
 	private int noOfPersons;
 	private int numberOfDays;
+	private double amountPerPerson;
 	private String modeOfTransportation;
 	private String hotel;
 	private  int packageId;
+	private String payMode; 
+	private String status;
+	private String confirm;
 	public TourInfoDto(int reserevdPackageId, String packageName, String description, Date startDate, Date endDate,
-			int noOfPersons, int numberOfDays, String modeOfTransportation, String hotel, int packageId) {
+			int noOfPersons, int numberOfDays, double amountPerPerson, String modeOfTransportation, String hotel,
+			int packageId, String payMode, String status, String confirm) {
 		this.reserevdPackageId = reserevdPackageId;
 		this.packageName = packageName;
 		this.description = description;
@@ -24,11 +29,21 @@ public class TourInfoDto {
 		this.endDate = endDate;
 		this.noOfPersons = noOfPersons;
 		this.numberOfDays = numberOfDays;
+		this.amountPerPerson = amountPerPerson;
 		this.modeOfTransportation = modeOfTransportation;
 		this.hotel = hotel;
 		this.packageId = packageId;
-		
+		this.payMode = payMode;
+		this.status = status;
+		this.confirm = confirm;
 	}
+	
+	public TourInfoDto() {
+	}
+	
+
+	
+
 	public int getReserevdPackageId() {
 		return reserevdPackageId;
 	}
@@ -71,6 +86,12 @@ public class TourInfoDto {
 	public void setNumberOfDays(int numberOfDays) {
 		this.numberOfDays = numberOfDays;
 	}
+	public double getAmountPerPerson() {
+		return amountPerPerson;
+	}
+	public void setAmountPerPerson(double amountPerPerson) {
+		this.amountPerPerson = amountPerPerson;
+	}
 	public String getModeOfTransportation() {
 		return modeOfTransportation;
 	}
@@ -89,5 +110,31 @@ public class TourInfoDto {
 	public void setPackageId(int packageId) {
 		this.packageId = packageId;
 	}
+	public String getPayMode() {
+		return payMode;
+	}
+	public void setPayMode(String payMode) {
+		this.payMode = payMode;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public String getConfirm() {
+		return confirm;
+	}
+	public void setConfirm(String confirm) {
+		this.confirm = confirm;
+	}
+	
+	
+	
+	
+	
+	
+
+
 	
 }

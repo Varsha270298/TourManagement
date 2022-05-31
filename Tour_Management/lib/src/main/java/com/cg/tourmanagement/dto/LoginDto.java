@@ -8,6 +8,10 @@ public LoginDto(String userId, int password, String role) {
 	this.userId = userId;
 	this.password = password;
 	this.role = role;
+	
+}
+public LoginDto() {
+	
 }
 public String getUserId() {
 	return userId;

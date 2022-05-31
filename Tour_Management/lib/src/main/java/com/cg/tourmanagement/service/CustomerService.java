@@ -11,10 +11,10 @@ import com.cg.tourmanagement.exception.UserIdAlreadyExistsException;
 
 //@Service
 public interface CustomerService {
-	int addCustomer(CustomerDto custdto) throws UserIdAlreadyExistsException;
+	int addCustomer(CustomerDto custdto);
 	List<TourInformationSystem> getpackageName();
 	void AddPackage(TourInfoDto tourinfodto);
-	void updateTourInfo(TourInfo tourinfo);
+	void updateTourInfo(TourInfoDto tourinfodto);
 	Optional<TourInfo> viewreserevdPackageById(int reserevdPackageId);
 	void cancelRegistration(int customerId );
 

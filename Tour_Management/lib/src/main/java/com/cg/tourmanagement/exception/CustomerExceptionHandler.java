@@ -16,4 +16,9 @@ public class CustomerExceptionHandler {
 	public ResponseEntity<Object> exception(CustomerPasswordException exception){
 		return new ResponseEntity<Object>("Entered Password is Invalid",HttpStatus.NOT_FOUND);
 	}
+	@ExceptionHandler(value=UserIdNotFoundException.class)
+	public ResponseEntity<Object> exception(UserIdNotFoundException exception){
+		return new ResponseEntity<Object>("User Not Found.......",HttpStatus.NOT_FOUND);
+	}
+	
 }
