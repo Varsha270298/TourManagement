@@ -13,18 +13,35 @@ public class LoginServiceImpl implements LoginService{
 	@Autowired
 	LoginRepository loginrepo;
 	@Override
+<<<<<<< HEAD
 	public void addLogins(LoginDto logindto) {
+=======
+	public void addLogins(Logins logins) {
+>>>>>>> 63c1d070c96a08e85173e5299aa609fb0a5177d0
 		
+		//Logins login = new Logins();
 		
-		Logins logins=new Logins();
-		logins.setUserId(logindto.getUserId());
-		logins.setPassword(logindto.getPassword());
-		logins.setRole(logindto.getRole());
 		loginrepo.save(logins);
+<<<<<<< HEAD
 		
 	}
 	
 	
+=======
 	
-
-}
+		}
+	@Override
+	public void loginValidate(String userId, int password) {
+		Logins login = loginrepo.loginValidate(userId, password);
+		if(login==null) {
+			throw new UserIdAlreadyExistsException("value Already exist");
+		}
+		if(login.equals(userId)) {
+			throw new UserIdAlreadyExistsException("Invalid ");
+		}
+		
+		}
+	}
+>>>>>>> 63c1d070c96a08e85173e5299aa609fb0a5177d0
+	
+	
