@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class StaffExceptionHandler {
 
-	@ExceptionHandler(value=CustomerUserIdAlreadyExistsException.class)
+	@ExceptionHandler(value=UserIdAlreadyExistsException.class)
 	public ResponseEntity<Object> exception(StaffUserIdAlreadyExistsException exception){
 		return new ResponseEntity<Object>("Staff UserId AlreadyExist......",HttpStatus.NOT_FOUND);
 	}

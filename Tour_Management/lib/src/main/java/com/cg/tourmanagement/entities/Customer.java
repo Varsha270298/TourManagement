@@ -108,8 +108,6 @@ public class Customer {
 	public void setModeOfPayment(String modeOfPayment) {
 		this.modeOfPayment = modeOfPayment;
 	}
-	
-	
 	public TourInfo getTourinfo() {
 		return tourinfo;
 	}

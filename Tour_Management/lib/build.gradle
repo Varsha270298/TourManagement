@@ -16,7 +16,12 @@ repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
 }
+<<<<<<< HEAD
  sourceCompatibility = 1.8
+=======
+
+sourceCompatibility = 1.8
+>>>>>>> 0ebe1212ae2f52c80d7891ff30130fbb2e3e2d85
 dependencies {
    implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-devtools'

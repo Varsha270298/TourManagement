@@ -13,11 +13,14 @@ public class CustomerDto {
 	private int age;
 	private String gender;
 	private String modeOfPayment;
-	private  int packageId;
 	private int reserevdPackageId;
 	
+	
+	public CustomerDto() {
+	}
+
 	public CustomerDto(int  customerId, String userId, int password, String firstName, String lastName, long mobileNo,
-			int age, String gender, String modeOfPayment, int packageId, int reserevdPackageId) {
+			int age, String gender, String modeOfPayment, int reserevdPackageId) {
 		
 		this.customerId = customerId;
 		this.userId = userId;
@@ -28,7 +31,6 @@ public class CustomerDto {
 		this.age = age;
 		this.gender = gender;
 		this.modeOfPayment = modeOfPayment;
-		this.packageId = packageId;
 		this.reserevdPackageId = reserevdPackageId;
 	}
 	
@@ -88,12 +90,7 @@ public class CustomerDto {
 	public void setModeOfPayment(String modeOfPayment) {
 		this.modeOfPayment = modeOfPayment;
 	}
-	public int getPackageId() {
-		return packageId;
-	}
-	public void setPackageId(int packageId) {
-		this.packageId = packageId;
-	}
+	
 	public int getReserevdPackageId() {
 		return reserevdPackageId;
 	}

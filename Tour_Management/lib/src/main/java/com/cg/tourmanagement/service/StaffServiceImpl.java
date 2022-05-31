@@ -43,12 +43,13 @@ public class StaffServiceImpl implements StaffService {
 	
 	@Override
 	public boolean Confirm(int id) {
-		int cnt = trRepo.confirm(id);
-		if(cnt != 1) {
-			return false;
-		} else {
-			return true;
-		}
+		return false;
+//		int cnt =  trRepo).confirm(id);
+//		if(cnt != 1) {
+//			return false;
+//		} else {
+//			return true;
+//		}
 	}
 /*
 	@Override
