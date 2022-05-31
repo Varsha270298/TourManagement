@@ -139,6 +139,14 @@ public class TourInfo {
 	public void setConfirm(int confirm) {
 		this.confirm = confirm;
 	}
+	public TourInfo() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public TourInfo(int reserevdPackageId) {
+		super();
+		this.reserevdPackageId = reserevdPackageId;
+	}
 	
 	
 	

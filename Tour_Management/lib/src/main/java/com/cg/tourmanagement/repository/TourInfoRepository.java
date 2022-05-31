@@ -11,7 +11,7 @@ import com.cg.tourmanagement.entities.TourInfo;
 public interface TourInfoRepository  extends JpaRepository<TourInfo, Integer>{
 	@Transactional
 	@Modifying
-	//@Query("update t from TourInfo t set t.Status = 'Booked' where t.reserevdPackageId = :id")
+	@Query("update TourInfo set Status = 'Booked' where reserevdPackageId = ?1")
 	public int confirm(int id);
 
 
