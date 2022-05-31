@@ -9,5 +9,7 @@ import com.cg.tourmanagement.entities.Customer;
 public interface CustomerRepository extends JpaRepository<Customer, Integer>{
 	@Query(value="select cust from Customer cust where cust.customerId=?1")
 	Customer getBycustId(int customerId);
+	@Query(value="select cust from Customer cust where cust.userId=?1")
+	Customer getcustUserId(String userId);
 	
 }

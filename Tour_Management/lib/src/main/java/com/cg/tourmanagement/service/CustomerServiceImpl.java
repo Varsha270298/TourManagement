@@ -26,6 +26,8 @@ public class CustomerServiceImpl implements CustomerService{
 
 	@Override
 	public int addCustomer(CustomerDto custdto)  {
+		
+		
 		TourInformationSystem tour=tourrepo.getpackageId(custdto.getPackageId());
 		TourInfo tourinfo=tourinforepo.getReservePackageId(custdto.getReserevdPackageId());
 		Customer cust=new Customer();
