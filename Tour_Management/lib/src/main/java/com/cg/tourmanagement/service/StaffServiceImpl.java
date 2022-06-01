@@ -1,8 +1,6 @@
 package com.cg.tourmanagement.service;
 
 import java.util.List;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,20 +21,20 @@ public class StaffServiceImpl implements StaffService {
 	TourInfoRepository trRepo;
 	
 	@Override
-	public Staff addStaff(Staff staff) throws StaffUserIdAlreadyExistsException, StaffPasswordException {
+	public void addStaff(Staff staff) throws StaffUserIdAlreadyExistsException, StaffPasswordException {
 		
-		Staff staf = stfRepo.save(staff);
-		return staf;	
+		//Staff staf = stfRepo.save(staff);
+		stfRepo.save(staff);
 	}
 	
-	@Override
-	public Staff ValidateUser(Staff user) {
-		String uid = user.getUserId();
-		String pwd = user.getPassword();
-		Staff st = stfRepo.Login(uid, pwd);
-		return st;
-	}
-	
+//	@Override
+//	public Staff ValidateUser(Staff user) {
+//		String uid = user.getUserId();
+//		String pwd = user.getPassword();
+//		Staff st = stfRepo.Login(uid, pwd);
+//		return st;
+//	}
+//	
 	
 	@Override
 	public List<TourInfo> getAllTour() {

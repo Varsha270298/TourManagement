@@ -18,5 +18,6 @@ public class TourInfoServiceImpl implements TourInfoService{
 		// TODO Auto-generated method stub
 		return ((JpaRepository<TourInfo,Integer>) tourinforepo).findAll();
 	}
-
+	
+	
 }

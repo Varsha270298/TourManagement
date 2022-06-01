@@ -9,7 +9,7 @@ import com.cg.tourmanagement.entities.TourInfo;
 import com.cg.tourmanagement.entities.TourInformationSystem;
 import com.cg.tourmanagement.exception.UserIdAlreadyExistsException;
 
-//@Service
+
 public interface CustomerService {
 	int addCustomer(CustomerDto custdto);
 	List<TourInformationSystem> getpackageName();
