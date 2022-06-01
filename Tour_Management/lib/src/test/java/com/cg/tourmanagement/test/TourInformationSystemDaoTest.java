@@ -2,8 +2,6 @@ package com.cg.tourmanagement.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
-
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -12,11 +10,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.cg.tourmanagement.entities.TourInformationSystem;
 import com.cg.tourmanagement.repository.TourInformationSystemRepository;
-@SpringBootTest
-public class TourInformationSystemDaoTest {
-	@Autowired
+
+	@SpringBootTest
+	class TourInformationSystemDaoTest {
+		@Autowired
 		TourInformationSystemRepository tourrepo;
-	@Autowired
 		
 		@Test
 		public void testGetPackageById() {
@@ -30,11 +28,7 @@ public class TourInformationSystemDaoTest {
 			List<TourInformationSystem> tourlist = tourrepo.findAll();
 			assertNotNull(tourlist);
 		}
-		//@Test
-		public void testGetAllItemsNull() {
-			List<TourInformationSystem> tourlist = tourrepo.findAll();
-			assertNull(tourlist);  
-		}
+	
 
 	}
 

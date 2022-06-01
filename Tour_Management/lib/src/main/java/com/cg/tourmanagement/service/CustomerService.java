@@ -12,7 +12,7 @@ import com.cg.tourmanagement.exception.UserIdAlreadyExistsException;
 
 public interface CustomerService {
 	int addCustomer(CustomerDto custdto);
-	List<TourInformationSystem> getpackageName();
+	List<TourInformationSystem>  viewAllReservedPackage();
 	void AddPackage(TourInfoDto tourinfodto);
 	void updateTourInfo(TourInfoDto tourinfodto);
 	Optional<TourInfo> viewreserevdPackageById(int reserevdPackageId);
