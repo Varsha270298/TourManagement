@@ -14,24 +14,24 @@ public class LoginServiceImpl implements LoginService{
 	@Override
 	public void addLogins(Logins logins) {
 		
-		//Logins login = new Logins();
 		
 		loginrepo.save(logins);
+		
+	}
 	
-		}
+	
+	
 	@Override
 	public void loginValidate(String userId, int password) {
 		Logins login = loginrepo.loginValidate(userId, password);
 		if(login==null) {
-			throw new UserIdAlreadyExistsException("value Already exist");
+			throw new UserIdAlreadyExistsException();
 		}
 		if(login.equals(userId)) {
-			throw new UserIdAlreadyExistsException("Invalid ");
+			throw new UserIdAlreadyExistsException();
 		}
 		
 		}
-
 	}
-	
 	
 	

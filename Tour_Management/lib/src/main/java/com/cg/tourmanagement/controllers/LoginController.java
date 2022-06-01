@@ -24,6 +24,7 @@ public class LoginController {
 	     loginservice.addLogins(logins);
 		return new ResponseEntity<String>("LoginSuccessful.............", HttpStatus.OK);
 	}
+
 	
 	@GetMapping("/login/{userId}/{password}")
 	public ResponseEntity<String> loginValidate(@PathVariable String userId,int password ){
