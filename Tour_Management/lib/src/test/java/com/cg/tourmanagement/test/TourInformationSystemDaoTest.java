@@ -22,7 +22,7 @@ public class TourInformationSystemDaoTest {
 		public void testGetPackageById() {
 			TourInformationSystem tour = tourrepo.getById(20);
 			System.out.println(tour.getPackageId()); 
-			assertEquals(tour.getPackageId(), 30); 
+			assertEquals(tour.getPackageId(), 20); 
 		}
 		
 		@Test
