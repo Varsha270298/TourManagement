@@ -8,17 +8,12 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class CustomerExceptionHandler {
 	
-	@ExceptionHandler(value=UserIdAlreadyExistsException.class)
-	public ResponseEntity<Object> exception(UserIdAlreadyExistsException exception){
+	@ExceptionHandler(value=CustomerUserIdAlreadyExistsException.class)
+	public ResponseEntity<Object> exception(CustomerUserIdAlreadyExistsException exception){
 		return new ResponseEntity<Object>("Customer UserId AlreadyExist......",HttpStatus.NOT_FOUND);
 	}
 	@ExceptionHandler(value=CustomerPasswordException.class)
 	public ResponseEntity<Object> exception(CustomerPasswordException exception){
 		return new ResponseEntity<Object>("Entered Password is Invalid",HttpStatus.NOT_FOUND);
 	}
-	@ExceptionHandler(value=UserIdNotFoundException.class)
-	public ResponseEntity<Object> exception(UserIdNotFoundException exception){
-		return new ResponseEntity<Object>("User Not Found.......",HttpStatus.NOT_FOUND);
-	}
-	
 }
