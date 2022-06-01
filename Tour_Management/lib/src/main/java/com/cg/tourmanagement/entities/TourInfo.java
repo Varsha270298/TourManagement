@@ -48,13 +48,29 @@ public class TourInfo {
 	@OneToOne
 	@JoinColumn(name="packageId")
 	private  TourInformationSystem tour;
-	
-	
-	
-	
-
-
 	public TourInfo() {
+	}
+	
+	
+	
+	public TourInfo(int reserevdPackageId, String packageName, String description, Date startDate, Date endDate,
+			int noOfPersons, int numberOfDays, double amountPerPerson, String modeOfTransportation, String hotel,
+			String confirm, String payMode, String status, TourInformationSystem tour) {
+		super();
+		this.reserevdPackageId = reserevdPackageId;
+		this.packageName = packageName;
+		this.description = description;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.noOfPersons = noOfPersons;
+		this.numberOfDays = numberOfDays;
+		this.amountPerPerson = amountPerPerson;
+		this.modeOfTransportation = modeOfTransportation;
+		this.hotel = hotel;
+		this.confirm = confirm;
+		this.payMode = payMode;
+		this.status = status;
+		this.tour = tour;
 	}
 
 
@@ -224,26 +240,4 @@ public class TourInfo {
 	public void setTour(TourInformationSystem tour) {
 		this.tour = tour;
 	}
-<<<<<<< HEAD
-	public int getConfirm() {
-		return confirm;
-	}
-	public void setConfirm(int confirm) {
-		this.confirm = confirm;
-	}
-	public TourInfo() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	public TourInfo(int reserevdPackageId) {
-		super();
-		this.reserevdPackageId = reserevdPackageId;
-	}
-	
-=======
->>>>>>> 0ebe1212ae2f52c80d7891ff30130fbb2e3e2d85
-	
-	
-	
-
 }
