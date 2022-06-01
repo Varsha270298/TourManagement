@@ -8,10 +8,10 @@ import com.cg.tourmanagement.entities.Staff;
 @Repository
 public interface StaffRepository extends JpaRepository< Staff , String> {
 	
-	//@Query("Select s from Staff s where s.userId = :uid and s.password = :pwd")
 	@Query(value = "select staff from Staff  staff where staff.userId=?1")
 	Staff getByuserId(String uid);
-	//public Staff Login(String uid, String pwd);
+	
+	
 	
 	
 }

@@ -16,4 +16,8 @@ public class StaffExceptionHandler {
 	public ResponseEntity<Object> exception(StaffPasswordException exception){
 		return new ResponseEntity<Object>("Entered Password is Invalid",HttpStatus.NOT_FOUND);
 	}
+	@ExceptionHandler(value=PaymentUnsccuessfullException.class)
+	public ResponseEntity<Object> exception(PaymentUnsccuessfullException exception){
+		return new ResponseEntity<Object>("payment not received.....tryagain",HttpStatus.NOT_FOUND);
+	}
 }

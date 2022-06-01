@@ -4,15 +4,23 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.cg.tourmanagement.dto.CustomerDto;
+import com.cg.tourmanagement.dto.StaffDto;
+import com.cg.tourmanagement.entities.Customer;
 import com.cg.tourmanagement.entities.Staff;
 import com.cg.tourmanagement.entities.TourInfo;
+import com.cg.tourmanagement.exception.PaymentUnsccuessfullException;
 import com.cg.tourmanagement.exception.StaffPasswordException;
 import com.cg.tourmanagement.exception.StaffUserIdAlreadyExistsException;
+import com.cg.tourmanagement.repository.CustomerRepository;
 import com.cg.tourmanagement.repository.StaffRepository;
 import com.cg.tourmanagement.repository.TourInfoRepository;
 
 @Service 
 public class StaffServiceImpl implements StaffService {
+
+	@Autowired
+    CustomerRepository  custRepo;
 
 	@Autowired
 	StaffRepository stfRepo;
@@ -21,71 +29,33 @@ public class StaffServiceImpl implements StaffService {
 	TourInfoRepository trRepo;
 	
 	@Override
-	public void addStaff(Staff staff) throws StaffUserIdAlreadyExistsException, StaffPasswordException {
+	public void addStaff(StaffDto staffdto) {
 		
-		//Staff staf = stfRepo.save(staff);
+		TourInfo staf = trRepo.getReservePackageId(staffdto.getReserevdPackageId());
+		Staff staff = new Staff();
+		staff.setUserId(staffdto.getUserId());
+		staff.setPassword(staffdto.getPassword());
+		staff.setTourinfo(staf);
+		staff.setStatus(staffdto.getStatus());
 		stfRepo.save(staff);
+		
 	}
 	
-//	@Override
-//	public Staff ValidateUser(Staff user) {
-//		String uid = user.getUserId();
-//		String pwd = user.getPassword();
-//		Staff st = stfRepo.Login(uid, pwd);
-//		return st;
-//	}
-//	
+
 	
 	@Override
 	public List<TourInfo> getAllTour() {
-		return trRepo.findAll();
+		List<TourInfo> tourlist=trRepo.findAll();
+		return tourlist;
+		
+	}
+
+
+
+			
+			
+		
+		
 	}
 	
-	@Override
-	public boolean Confirm(int id) {
-		return false;
-//		int cnt =  trRepo).confirm(id);
-//		if(cnt != 1) {
-//			return false;
-//		} else {
-//			return true;
-//		}
-	}
-/*
-	@Override
-	public Optional<Staff> getUserId(String userId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	@Override
-	public void ViewPackage(TourInfo viewPackage) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void acceptPackage(TourInfo acceptPackage) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public Optional<TourInfo> reserevdPackageId(int reserevdPackageId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void cancelRegistration(int userId) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void getPassword(TourInfo viewPackage) {
-		// TODO Auto-generated method stub
-		
-	}
-	*/
-}

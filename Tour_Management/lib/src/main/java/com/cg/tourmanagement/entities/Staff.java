@@ -12,35 +12,44 @@ public class Staff {
 	@Id
 	private String userId;
 	private String password;
+	private String status;
 	
-	
+	public TourInfo getTourinfo() {
+		return tourinfo;
+	}
+
+
+	public void setTourinfo(TourInfo tourinfo) {
+		this.tourinfo = tourinfo;
+	}
+
 	//@Column(name="modeofpayment",length=30)
 	//private String modeOfPayment;
 	@OneToOne
 	@JoinColumn(name="reserevdPackageId")
 	private TourInfo tourinfo;
 	
+	
+	
 
-	public Staff(String userId, String password) {
+	public Staff(String userId, String password, TourInfo tourinfo,String status) {
 		super();
 		this.userId = userId;
 		this.password = password;
-	}
-
-
-	public Staff(String userId) {
-		super();
-		this.userId = userId;
-	}
-
-
-
-	public Staff(String userId, String modeOfPayment, TourInfo tourinfo) {
-		super();
-		this.userId = userId;
-		//this.modeOfPayment = modeOfPayment;
 		this.tourinfo = tourinfo;
+		this.status=status;
 	}
+
+
+	public String getStatus() {
+		return status;
+	}
+
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
 
 	public String getUserId() {
 		return userId;
