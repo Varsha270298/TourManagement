@@ -3,7 +3,6 @@ package com.cg.tourmanagement.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cg.tourmanagement.dto.LoginDto;
 import com.cg.tourmanagement.entities.Logins;
 import com.cg.tourmanagement.exception.UserIdAlreadyExistsException;
 import com.cg.tourmanagement.repository.LoginRepository;
