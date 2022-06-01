@@ -17,13 +17,13 @@ import com.cg.tourmanagement.service.CustomerService;
 import com.cg.tourmanagement.service.CustomerServiceImpl;
 
 @SpringBootTest
-public class CustomerDaoTest {
+ class CustomerDaoTest {
 	@Autowired
 	CustomerRepository custrepo;
 	@Autowired
 	CustomerService custservice=new CustomerServiceImpl();
 	@Test
-	public void testAddCust() {
+	 void testAddCust() {
 		CustomerDto cust=new CustomerDto();
 		cust.setMobileNo(9886767223l);
 		cust.setPassword(1324);
@@ -36,12 +36,13 @@ public class CustomerDaoTest {
 		}
 
 	@Test
-	public void testGetByCustId() {
+	 void testGetByCustId() {
 		Customer cust=custrepo.getBycustId(1);
 		assertEquals(cust.getCustomerId(), 1);
 	}
 	@Test
-	public void  testCustTableIsNotNull() {
+
+      void  testCustTableIsNotNull() {
 		List<Customer> custlist=custrepo.findAll();
 	   assertNotNull(custlist);
 		

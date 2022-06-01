@@ -7,7 +7,6 @@ import com.cg.tourmanagement.dto.CustomerDto;
 import com.cg.tourmanagement.dto.TourInfoDto;
 import com.cg.tourmanagement.entities.TourInfo;
 import com.cg.tourmanagement.entities.TourInformationSystem;
-import com.cg.tourmanagement.exception.UserIdAlreadyExistsException;
 
 
 public interface CustomerService {
