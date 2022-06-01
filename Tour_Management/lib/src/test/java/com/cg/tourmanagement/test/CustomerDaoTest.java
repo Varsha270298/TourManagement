@@ -37,8 +37,8 @@ public class CustomerDaoTest {
 
 	@Test
 	public void testGetByCustId() {
-		Customer cust=custrepo.getBycustId(2);
-		assertEquals(cust.getCustomerId(), 2);
+		Customer cust=custrepo.getBycustId(1);
+		assertEquals(cust.getCustomerId(), 1);
 	}
 	@Test
 	public void  testCustTableIsNotNull() {
@@ -46,6 +46,7 @@ public class CustomerDaoTest {
 	   assertNotNull(custlist);
 		
 	}
+	@Test
 	void testDeleteId() {
 		custrepo.deleteById(2);
 		Customer cust=custrepo.getBycustId(2);
