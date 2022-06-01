@@ -13,21 +13,11 @@ public class LoginServiceImpl implements LoginService{
 	@Autowired
 	LoginRepository loginrepo;
 	@Override
-<<<<<<< HEAD
-	public void addLogins(LoginDto logindto) {
-=======
 	public void addLogins(Logins logins) {
->>>>>>> 63c1d070c96a08e85173e5299aa609fb0a5177d0
 		
 		//Logins login = new Logins();
 		
 		loginrepo.save(logins);
-<<<<<<< HEAD
-		
-	}
-	
-	
-=======
 	
 		}
 	@Override
@@ -41,7 +31,8 @@ public class LoginServiceImpl implements LoginService{
 		}
 		
 		}
+
 	}
->>>>>>> 63c1d070c96a08e85173e5299aa609fb0a5177d0
+	
 	
 	

@@ -13,7 +13,6 @@ import com.cg.tourmanagement.dto.TourInfoDto;
 import com.cg.tourmanagement.entities.Customer;
 import com.cg.tourmanagement.entities.TourInfo;
 import com.cg.tourmanagement.entities.TourInformationSystem;
-import com.cg.tourmanagement.exception.UserIdAlreadyExistsException;
 import com.cg.tourmanagement.exception.UserIdNotFoundException;
 import com.cg.tourmanagement.repository.CustomerRepository;
 import com.cg.tourmanagement.repository.TourInfoRepository;
