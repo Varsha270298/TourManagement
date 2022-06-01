@@ -44,10 +44,10 @@ public class TourInfo {
 	
 	@Column(name="Status",length=30)
 	private String status; //Booking Status
-	
 	@OneToOne
 	@JoinColumn(name="packageId")
-	private  TourInformationSystem tour;
+	private TourInformationSystem tour;
+
 	public TourInfo() {
 	}
 	
@@ -55,7 +55,7 @@ public class TourInfo {
 	
 	public TourInfo(int reserevdPackageId, String packageName, String description, Date startDate, Date endDate,
 			int noOfPersons, int numberOfDays, double amountPerPerson, String modeOfTransportation, String hotel,
-			String confirm, String payMode, String status, TourInformationSystem tour) {
+			String confirm, String payMode, String status,TourInformationSystem tour) {
 		super();
 		this.reserevdPackageId = reserevdPackageId;
 		this.packageName = packageName;
@@ -70,7 +70,8 @@ public class TourInfo {
 		this.confirm = confirm;
 		this.payMode = payMode;
 		this.status = status;
-		this.tour = tour;
+		this.tour=tour;
+		
 	}
 
 
@@ -240,4 +241,8 @@ public class TourInfo {
 	public void setTour(TourInformationSystem tour) {
 		this.tour = tour;
 	}
+
+
+
+	
 }

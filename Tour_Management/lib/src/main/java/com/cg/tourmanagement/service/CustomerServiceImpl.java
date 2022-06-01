@@ -53,15 +53,14 @@ public class CustomerServiceImpl implements CustomerService{
 
 	@Override
 	public void AddPackage(TourInfoDto tourinfodto) {
-TourInformationSystem tour=tourrepo.getpackageId(tourinfodto.getPackageId());
-		
-		
+		TourInformationSystem toursys =tourrepo.getpackageId(tourinfodto.getPackageId());
 		TourInfo tourinfo=new TourInfo();
 		
-		tourinfo.setPackageName(tourinfodto.getPackageName());
+		
+		tourinfo.setPackageName(toursys.getPackageName());
 		tourinfo.setNoOfPersons(tourinfodto.getNoOfPersons());
 		tourinfo.setNumberOfDays(tourinfodto.getNumberOfDays());
-		tourinfo.setAmountPerPerson(tourinfodto.getAmountPerPerson());
+		tourinfo.setAmountPerPerson(toursys.getAmountPerPerson());
 		tourinfo.setConfirm(tourinfodto.getConfirm());
 		Date startdate=new Date();
 		tourinfo.setStartDate(startdate);
@@ -72,12 +71,12 @@ TourInformationSystem tour=tourrepo.getpackageId(tourinfodto.getPackageId());
 		
 		Date enddate=cal.getTime();
 		tourinfo.setEndDate(enddate);
-		tourinfo.setModeOfTransportation(tourinfodto.getModeOfTransportation());
-		tourinfo.setHotel(tourinfodto.getHotel());
-		tourinfo.setDescription(tourinfodto.getDescription());
-		tourinfo.setTour(tour);
+		tourinfo.setModeOfTransportation(toursys.getModeOfTransportation());
+		tourinfo.setHotel(toursys.getHotel());
+		tourinfo.setDescription(toursys.getDescription());
 		tourinfo.setPayMode(tourinfodto.getPayMode());
 		tourinfo.setStatus(tourinfodto.getStatus());
+		tourinfo.setTour(toursys);
 		tourinforepo.save(tourinfo);
 		
 		}
@@ -98,8 +97,9 @@ TourInformationSystem tour=tourrepo.getpackageId(tourinfodto.getPackageId());
 	public Optional<TourInfo> viewreserevdPackageById(int reserevdPackageId) {
 		
 		Optional<TourInfo>tourinfo=tourinforepo.findById(reserevdPackageId);
-		if(tourinfo.empty() != null)
+		if(tourinfo == null)
 			throw new UserIdNotFoundException(" Id Not Found......");
+	
 		return tourinfo;
 	}
 

@@ -15,13 +15,13 @@ public class TourInfoDto {
 	private double amountPerPerson;
 	private String modeOfTransportation;
 	private String hotel;
-	private  int packageId;
 	private String payMode; 
 	private String status;
 	private String confirm;
+	private int packageId;
 	public TourInfoDto(int reserevdPackageId, String packageName, String description, Date startDate, Date endDate,
 			int noOfPersons, int numberOfDays, double amountPerPerson, String modeOfTransportation, String hotel,
-			int packageId, String payMode, String status, String confirm) {
+			 String payMode, String status, String confirm,int packageId) {
 		this.reserevdPackageId = reserevdPackageId;
 		this.packageName = packageName;
 		this.description = description;
@@ -32,10 +32,10 @@ public class TourInfoDto {
 		this.amountPerPerson = amountPerPerson;
 		this.modeOfTransportation = modeOfTransportation;
 		this.hotel = hotel;
-		this.packageId = packageId;
 		this.payMode = payMode;
 		this.status = status;
 		this.confirm = confirm;
+		this.packageId=packageId;
 	}
 	
 	public TourInfoDto() {
@@ -104,12 +104,7 @@ public class TourInfoDto {
 	public void setHotel(String hotel) {
 		this.hotel = hotel;
 	}
-	public int getPackageId() {
-		return packageId;
-	}
-	public void setPackageId(int packageId) {
-		this.packageId = packageId;
-	}
+	
 	public String getPayMode() {
 		return payMode;
 	}
@@ -127,6 +122,14 @@ public class TourInfoDto {
 	}
 	public void setConfirm(String confirm) {
 		this.confirm = confirm;
+	}
+
+	public int getPackageId() {
+		return packageId;
+	}
+
+	public void setPackageId(int packageId) {
+		this.packageId = packageId;
 	}
 	
 	
