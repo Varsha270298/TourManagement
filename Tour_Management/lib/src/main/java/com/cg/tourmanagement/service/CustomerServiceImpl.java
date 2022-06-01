@@ -58,7 +58,7 @@ public class CustomerServiceImpl implements CustomerService{
 		
 		tourinfo.setPackageName(toursys.getPackageName());
 		tourinfo.setNoOfPersons(tourinfodto.getNoOfPersons());
-		tourinfo.setNumberOfDays(tourinfodto.getNumberOfDays());
+		tourinfo.setNumberOfDays(toursys.getNumberOfDays());
 		tourinfo.setAmountPerPerson(toursys.getAmountPerPerson());
 		tourinfo.setConfirm(tourinfodto.getConfirm());
 		Date startdate=new Date();
@@ -66,7 +66,7 @@ public class CustomerServiceImpl implements CustomerService{
 		
 		Calendar cal=Calendar.getInstance();
 		cal.setTime(startdate);
-		cal.add(Calendar.DATE,10);
+		cal.add(Calendar.DATE,toursys.getNumberOfDays());
 		
 		Date enddate=cal.getTime();
 		tourinfo.setEndDate(enddate);
@@ -115,7 +115,7 @@ public class CustomerServiceImpl implements CustomerService{
 
 
 	@Override
-	public List<TourInformationSystem> getpackageName() {
+	public List<TourInformationSystem> viewAllReservedPackage() {
 		List<TourInformationSystem> tourlist=tourrepo.findAll();
 		return tourlist;
 	}

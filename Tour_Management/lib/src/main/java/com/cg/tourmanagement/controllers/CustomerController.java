@@ -1,5 +1,6 @@
 package com.cg.tourmanagement.controllers;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ import com.cg.tourmanagement.service.CustomerServiceImpl;
 import com.cg.tourmanagement.dto.CustomerDto;
 import com.cg.tourmanagement.dto.TourInfoDto;
 import com.cg.tourmanagement.entities.TourInfo;
+import com.cg.tourmanagement.entities.TourInformationSystem;
 
 @RestController
 @RequestMapping("/cust")
@@ -52,6 +54,11 @@ public class CustomerController {
 	public ResponseEntity<String> editpackage(@RequestBody  TourInfoDto tourinfo ){
 		custservice.updateTourInfo(tourinfo);
 		return new ResponseEntity<String>("updated",HttpStatus.OK);
+	}
+	@GetMapping("/id")
+	public ResponseEntity<List<TourInformationSystem>> ViewAll(){
+		List<TourInformationSystem> tour = custservice.viewAllReservedPackage();
+		return new ResponseEntity<List<TourInformationSystem>>(tour,HttpStatus.OK);
 	}
 
 
