@@ -23,8 +23,7 @@ public class Staff {
 		this.tourinfo = tourinfo;
 	}
 
-	//@Column(name="modeofpayment",length=30)
-	//private String modeOfPayment;
+	
 	@OneToOne
 	@JoinColumn(name="reserevdPackageId")
 	private TourInfo tourinfo;
@@ -63,12 +62,7 @@ public class Staff {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	//public String getModeOfPayment() {
-		//return modeOfPayment;
-	//}
-	//public void setModeOfPayment(String modeOfPayment) {
-		//this.modeOfPayment = modeOfPayment;
-	//}
+	
 
 	public Staff() {
 		super();

@@ -29,7 +29,7 @@ public class CustomerController {
     CustomerServiceImpl custservice;
 	@PostMapping("/addcust")
 	public ResponseEntity<String> addCustomer(@RequestBody CustomerDto custdto){
-		custservice.addCustomer(custdto);;
+		custservice.addCustomer(custdto);
 		return new ResponseEntity<String>("inserted", HttpStatus.OK);
 	
 	}
