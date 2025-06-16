@@ -26,19 +26,19 @@ import com.cg.tourmanagement.service.CustomerServiceImpl;
 	 void testAddCust() {
 		CustomerDto cust=new CustomerDto();
 		cust.setMobileNo(9886767223l);
-		cust.setPassword(1324);
+		//cust.setPassword(1324);
 		cust.setGender("male");
 		int custId=custservice.addCustomer(cust);
-		assertEquals(9886767223l, custrepo.getBycustId(custId).getMobileNo());
-		assertEquals(1324, custrepo.getBycustId(custId).getPassword());
-		assertEquals("male", custrepo.getBycustId(custId).getGender());
+		assertEquals(9886767223l, custrepo.findById(custId).get().getMobileNo());
+		assertEquals(1324, custrepo.findById(custId).get().getPassword());
+		assertEquals("male", custrepo.getById(custId).getGender());
 		
 		}
 
 	@Test
 	 void testGetByCustId() {
-		Customer cust=custrepo.getBycustId(1);
-		assertEquals(cust.getCustomerId(), 1);
+		Customer cust=custrepo.findById(1).get();
+		assertEquals(cust.getId(), 1);
 	}
 	@Test
 
@@ -50,7 +50,7 @@ import com.cg.tourmanagement.service.CustomerServiceImpl;
 	@Test
 	void testDeleteId() {
 		custrepo.deleteById(2);
-		Customer cust=custrepo.getBycustId(2);
+		Customer cust=custrepo.findById(2).get();
 		assertNull(cust);
 	}
 	

@@ -19,7 +19,6 @@ public class TourInfoServiceImpl implements TourInfoService{
 
 	@Override
 	public List<TourInfo> viewAllReservedTourPackages() {
-		// TODO Auto-generated method stub
 		return  tourinforepo.findAll();
 		
 	}

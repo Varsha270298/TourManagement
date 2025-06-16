@@ -28,10 +28,7 @@ public class StaffServiceImpl implements StaffService {
 		
 		TourInfo staf = trRepo.getReservePackageId(staffdto.getReserevdPackageId());
 		Staff staff = new Staff();
-		staff.setUserId(staffdto.getUserId());
-		staff.setPassword(staffdto.getPassword());
-		staff.setTourinfo(staf);
-		staff.setStatus(staffdto.getStatus());
+		
 		stfRepo.save(staff);
 		
 	}

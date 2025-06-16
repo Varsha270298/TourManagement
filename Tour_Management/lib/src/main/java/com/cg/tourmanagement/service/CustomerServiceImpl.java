@@ -39,12 +39,13 @@ public class CustomerServiceImpl implements CustomerService{
 		cust.setLastName(custdto.getLastName());
 		cust.setMobileNo(custdto.getMobileNo());
 		cust.setGender(custdto.getGender());
-		cust.setUserId(custdto.getUserId());
+		cust.setId(custdto.getId());
 		cust.setPassword(custdto.getPassword());
 		cust.setModeOfPayment(custdto.getModeOfPayment());
 		cust.setTourinfo(t);
 		custrepo.save(cust);
-		return cust.getCustomerId();
+		return cust.getId();
+		
 		
 	}
 
@@ -104,11 +105,11 @@ public class CustomerServiceImpl implements CustomerService{
 
 	@Override
 	public void cancelRegistration(int customerId) {
-		Customer customer=custrepo.getBycustId(customerId);
+		Customer customer=custrepo.findById(customerId).get();
 		if(customer == null)
 			throw new UserIdNotFoundException(" Id Not Found......");
-		Customer cust=custrepo.getBycustId(customerId);
-		custrepo.delete(cust);
+		
+		custrepo.delete(customer);
 		
 	}
 

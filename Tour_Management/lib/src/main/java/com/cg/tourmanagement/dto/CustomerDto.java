@@ -1,9 +1,9 @@
 package com.cg.tourmanagement.dto;
 
 public class CustomerDto {
-	private int customerId;
-	private String userId;
-	private int password;
+	private int id;
+	private String username;
+	private String password;
 	private String firstName;
 	private String lastName;
 	private long mobileNo;
@@ -13,14 +13,11 @@ public class CustomerDto {
 	private int reserevdPackageId;
 	
 	
-	public CustomerDto() {
-	}
-
-	public CustomerDto(int  customerId, String userId, int password, String firstName, String lastName, long mobileNo,
+	public CustomerDto(int id, String username, String password, String firstName, String lastName, long mobileNo,
 			int age, String gender, String modeOfPayment, int reserevdPackageId) {
-		
-		this.customerId = customerId;
-		this.userId = userId;
+		super();
+		this.id = id;
+		this.username = username;
 		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -30,72 +27,117 @@ public class CustomerDto {
 		this.modeOfPayment = modeOfPayment;
 		this.reserevdPackageId = reserevdPackageId;
 	}
-	
-	public int getCustomerId() {
-		return customerId;
+
+
+	@Override
+	public String toString() {
+		return "CustomerDto [id=" + id + ", username=" + username + ", password=" + password + ", firstName="
+				+ firstName + ", lastName=" + lastName + ", mobileNo=" + mobileNo + ", age=" + age + ", gender="
+				+ gender + ", modeOfPayment=" + modeOfPayment + ", reserevdPackageId=" + reserevdPackageId + "]";
 	}
 
-	public void setCustomerId(int customerId) {
-		this.customerId = customerId;
+
+	public int getId() {
+		return id;
 	}
 
-	public String getUserId() {
-		return userId;
+
+	public void setId(int id) {
+		this.id = id;
 	}
-	public void setUserId(String userId) {
-		this.userId = userId;
+
+
+	public String getUsername() {
+		return username;
 	}
-	public int getPassword() {
+
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+
+	public String getPassword() {
 		return password;
 	}
-	public void setPassword(int password) {
+
+
+	public void setPassword(String password) {
 		this.password = password;
 	}
+
+
 	public String getFirstName() {
 		return firstName;
 	}
+
+
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
+
+
 	public String getLastName() {
 		return lastName;
 	}
+
+
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+
+
 	public long getMobileNo() {
 		return mobileNo;
 	}
+
+
 	public void setMobileNo(long mobileNo) {
 		this.mobileNo = mobileNo;
 	}
+
+
 	public int getAge() {
 		return age;
 	}
+
+
 	public void setAge(int age) {
 		this.age = age;
 	}
+
+
 	public String getGender() {
 		return gender;
 	}
+
+
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
+
+
 	public String getModeOfPayment() {
 		return modeOfPayment;
 	}
+
+
 	public void setModeOfPayment(String modeOfPayment) {
 		this.modeOfPayment = modeOfPayment;
 	}
-	
+
+
 	public int getReserevdPackageId() {
 		return reserevdPackageId;
 	}
+
+
 	public void setReserevdPackageId(int reserevdPackageId) {
 		this.reserevdPackageId = reserevdPackageId;
 	}
-	
-	
-	
-	
+
+
+	public CustomerDto() {
+	}
+
 }

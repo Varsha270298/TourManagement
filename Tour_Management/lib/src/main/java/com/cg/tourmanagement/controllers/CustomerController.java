@@ -11,23 +11,25 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import com.cg.tourmanagement.service.CustomerServiceImpl;
-
+import com.cg.tourmanagement.service.TourInfoServiceImpl;
 import com.cg.tourmanagement.dto.CustomerDto;
 import com.cg.tourmanagement.dto.TourInfoDto;
 import com.cg.tourmanagement.entities.TourInfo;
 import com.cg.tourmanagement.entities.TourInformationSystem;
-
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/cust")
+@RequestMapping("/customer")
 public class CustomerController {
 	@Autowired
     CustomerServiceImpl custservice;
-	@PostMapping("/addcust")
+	
+	@PostMapping("/addcustomer")
 	public ResponseEntity<String> addCustomer(@RequestBody CustomerDto custdto){
 		custservice.addCustomer(custdto);
 		return new ResponseEntity<String>("inserted", HttpStatus.OK);
@@ -45,7 +47,7 @@ public class CustomerController {
 	custservice.cancelRegistration(customerId);
 		return new ResponseEntity<String>("deleted", HttpStatus.OK);
 	}
-	@GetMapping("/id/{reserevdPackageId}")
+	@GetMapping("/resereveid/{reserevdPackageId}")
 	public ResponseEntity<Optional<TourInfo>> getreservetourById(@PathVariable int reserevdPackageId ){
 		Optional<TourInfo> tour = custservice.viewreserevdPackageById(reserevdPackageId);
 		return new ResponseEntity<Optional<TourInfo>>(tour,HttpStatus.OK);
@@ -55,11 +57,12 @@ public class CustomerController {
 		custservice.updateTourInfo(tourinfo);
 		return new ResponseEntity<String>("updated",HttpStatus.OK);
 	}
-	@GetMapping("/id")
+	@GetMapping("/customerid")
 	public ResponseEntity<List<TourInformationSystem>> ViewAll(){
 		List<TourInformationSystem> tour = custservice.viewAllReservedPackage();
 		return new ResponseEntity<List<TourInformationSystem>>(tour,HttpStatus.OK);
 	}
+	
 
 
 

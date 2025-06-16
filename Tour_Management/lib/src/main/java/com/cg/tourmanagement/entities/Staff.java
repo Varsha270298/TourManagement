@@ -6,10 +6,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.cg.tourmanagement.model.User;
+
 @Entity
 @Table(name="staff")
-public class Staff {
-	@Id
+public class Staff extends User {
+	/*@Id
 	private String userId;
 	private String password;
 	private String status;
@@ -66,7 +68,7 @@ public class Staff {
 
 	public Staff() {
 		super();
-		}
+		}*/
 	
 	
 

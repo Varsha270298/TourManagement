@@ -9,16 +9,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.cg.tourmanagement.model.User;
+
 @Entity
 @Table(name="customer")
-public class Customer {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int customerId;
-	@Column(name="user_id",length=30)
-	private String userId;
-	@Column(name="password")
-	private int password;
+public class Customer extends User {
+	
 	@Column(name="firstname",length=30)
 	private String firstName;
 	@Column(name="lastname",length=30)
@@ -36,14 +32,9 @@ public class Customer {
 	private TourInfo  tourinfo;
 	
 	
-	public Customer() {
-		
-	}
-	public Customer(int customerId, String userId, int password, String firstName, String lastName, long mobileNo,
-			int age, String gender, String modeOfPayment, TourInfo tourinfo) {
-		this.customerId = customerId;
-		this.userId = userId;
-		this.password = password;
+	public Customer(int id, String username, String password, String role, String firstName, String lastName,
+			long mobileNo, int age, String gender, String modeOfPayment, TourInfo tourinfo) {
+		super(id, username, password, role);
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.mobileNo = mobileNo;
@@ -52,67 +43,93 @@ public class Customer {
 		this.modeOfPayment = modeOfPayment;
 		this.tourinfo = tourinfo;
 	}
-	public String getUserId() {
-		return userId;
-	}
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-	public int getPassword() {
-		return password;
-	}
-	public void setPassword(int password) {
-		this.password = password;
-	}
-	
-	
-	public int getCustomerId() {
-		return customerId;
-	}
-	public void setCustomerId(int customerId) {
-		this.customerId = customerId;
-	}
+
+
 	public String getFirstName() {
 		return firstName;
 	}
+
+
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
+
+
 	public String getLastName() {
 		return lastName;
 	}
+
+
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+
+
 	public long getMobileNo() {
 		return mobileNo;
 	}
+
+
 	public void setMobileNo(long mobileNo) {
 		this.mobileNo = mobileNo;
 	}
+
+
 	public int getAge() {
 		return age;
 	}
+
+
 	public void setAge(int age) {
 		this.age = age;
 	}
+
+
 	public String getGender() {
 		return gender;
 	}
+
+
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
+
+
 	public String getModeOfPayment() {
 		return modeOfPayment;
 	}
+
+
 	public void setModeOfPayment(String modeOfPayment) {
 		this.modeOfPayment = modeOfPayment;
 	}
+
+
 	public TourInfo getTourinfo() {
 		return tourinfo;
 	}
+
+
 	public void setTourinfo(TourInfo tourinfo) {
 		this.tourinfo = tourinfo;
 	}
-	
+
+
+	public Customer() {
+		
+	}
+
+
+	@Override
+	public String toString() {
+		return "Customer [firstName=" + firstName + ", lastName=" + lastName + ", mobileNo=" + mobileNo + ", age=" + age
+				+ ", gender=" + gender + ", modeOfPayment=" + modeOfPayment + ", tourinfo=" + tourinfo + "]";
+	}
+
+
+	public Customer(int id, String username, String password, String role) {
+		super(id, username, password, role);
+		// TODO Auto-generated constructor stub
+	}
 }
+	
